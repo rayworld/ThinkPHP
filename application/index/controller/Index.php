@@ -33,12 +33,13 @@ class Index extends Controller
     //
     public function index()
     {
-        if(session('user') != '')
-        {
-            echo "您好： " . session('user')['username'] . ', <a href="' . url('login/loginout') . '">退出</a>';
-        }else
-        {
-            $this->redirect(url('index/login/index'));
-        }
+        //if(session('user') != '')
+        //{
+            //echo "您好： " . session('user')['username'] . ', <a href="' . url('login/loginout') . '">退出</a>';
+        //}else
+        //{
+        //    $this->redirect(url('index/login/index'));
+        //}
+        return $this->fetch();   
     } 
 }
