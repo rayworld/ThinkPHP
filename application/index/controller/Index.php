@@ -33,9 +33,9 @@ class Index extends Controller
     //
     public function index()
     {
-        if(cookie('user_name') != '')
+        if(session('user') != '')
         {
-            echo "您好： " . cookie('user_name') . ', <a href="' . url('login/loginout') . '">退出</a>';
+            echo "您好： " . session('user')['username'] . ', <a href="' . url('login/loginout') . '">退出</a>';
         }else
         {
             $this->redirect(url('index/login/index'));

@@ -2,55 +2,46 @@
 namespace app\index\controller;
  
 use think\Controller;
+use think\Request;
+use think\Db;
  
 class Login extends Controller
 {
     //xianshi denglu
     public function index()
     {
-    	return $this->fetch();
+        $request = request();
+        if($request->isPost()){
+            // 做一个简单的登录 组合where数组条件 
+            $map=input('post.');
+            // dump($map);
+            // exit();
+            $map['password']=md5($map['password']);
+            $data=Db::name('users')->where($map)->find();
+            if (empty($data)) {
+                $this->error('账号或密码错误');
+            }else{
+                $sdata=[
+	                'id'=>$data['id'],
+	                'username'=>$data['username'],
+	                'avatar'=>$data['avatar'],
+	                'email'=>$data['email'],
+	                'phone'=>$data['phone'],
+                ];
+                session('user',$sdata);
+
+                $this->success('登录成功、前往管理后台','index/Index/index');
+            }
+        }else{
+        return $this->fetch();
+        }
     }
     
-    // 处理登录逻辑
-    public function doLogin()
-    {
-        $param = input('post.');
-        if(empty($param['user_name'])){
-            
-            $this->error('用户名不能为空');
-        }
-        
-        if(empty($param['user_pwd'])){
-            
-            $this->error('密码不能为空');
-        }
-        
-        // 验证用户名
-        $has = db('users')->where('user_name', $param['user_name'])->find();
-        if(empty($has)){
-            
-            $this->error('用户名密码错误');
-        }
-        
-        // 验证密码
-        if($has['user_pwd'] != md5($param['user_pwd'])){
-            
-            $this->error('用户名密码错误');
-        }
-        
-        // 记录用户登录信息
-        cookie('user_id', $has['id'], 3600);  // 一个小时有效期
-        cookie('user_name', $has['user_name'], 3600);
-        
-        $this->redirect(url('index/index'));
-    }
 
     // 退出登录
     public function loginOut()
     {
-        cookie('user_id', null);
-        cookie('user_name', null);
-        
-        $this->redirect(url('login/index'));
+        session('user',null);
+        $this->success('退出成功、前往登录页面','Index/login/index');
     }
 }
