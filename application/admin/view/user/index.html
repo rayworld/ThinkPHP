@@ -505,7 +505,7 @@
 
                                 <!-- Dropdown footer -->
                                 <div class="pad-all text-right">
-                                    <a href="{:url('Index/Index/logout')}" class="btn btn-primary">
+                                    <a href="{:url('Admin/Index/logout')}" class="btn btn-primary">
                                         <i class="demo-pli-unlock"></i> Logout
                                     </a>
                                 </div>
@@ -569,7 +569,7 @@
                             <div class="row">
                                 <div class="col-sm-6 text-xs-center">
                                     <div class="form-group">
-                                        <a href="{:url('Index/User/add_user')}"><button id="demo-btn-addrow" class="btn btn-purple"><i class="demo-pli-plus"></i> Add New Roles</button></a>
+                                        <a href="{:url('Admin/User/add_user')}"><button id="demo-btn-addrow" class="btn btn-purple"><i class="demo-pli-plus"></i> Add New Roles</button></a>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 text-xs-center text-right">
@@ -593,7 +593,7 @@
                                         <td>{$v['username']}</td>
                                         <td>{$v['title']}</td>
                                         <td>
-                                            <a href="{:url('Index/User/edit_user',array('id'=>$v['id']))}">修改权限或密码</a>
+                                            <a href="{:url('Admin/User/edit_user',array('id'=>$v['id']))}">修改权限或密码</a>
                                         </td>
                                     </tr>
                                 {/foreach}
@@ -726,7 +726,7 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="{:url('Index/User/my_center')}">个人中心</a></li>
+                                            <li><a href="{:url('Admin/User/my_center')}">个人中心</a></li>
                                         </ul>
                                     </li>
 
@@ -742,9 +742,9 @@
                                         </a>
 
                                         <ul class="collapse">
-                                            <li><a href="{:url('Index/Rule/rule_list')}">权限管理</a></li>
-                                            <li><a href="{:url('Index/Rule/rule_group')}">角色管理</a></li>
-                                            <li><a href="{:url('Index/User/index')}">用户管理</a></li>
+                                            <li><a href="{:url('Admin/Rule/rule_list')}">权限管理</a></li>
+                                            <li><a href="{:url('Admin/Rule/rule_group')}">角色管理</a></li>
+                                            <li><a href="{:url('Admin/User/index')}">用户管理</a></li>
                                         </ul>
                                     </li>
 
@@ -759,9 +759,9 @@
                                         </a>
 
                                         <ul class="collapse">
-                                            <li><a href="{:url('Index/Article/index')}">文章管理</a></li>
-                                            <li><a href="{:url('Index/Rule/nav')}">菜单管理</a></li>
-                                            <li><a href="{:url('Index/Rule/log')}">日志管理</a></li>
+                                            <li><a href="{:url('Admin/Article/index')}">文章管理</a></li>
+                                            <li><a href="{:url('Admin/Rule/nav')}">菜单管理</a></li>
+                                            <li><a href="{:url('Admin/Rule/log')}">日志管理</a></li>
                                         </ul>
                                     </li>
                                 </ul>
