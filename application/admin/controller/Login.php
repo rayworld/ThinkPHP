@@ -1,5 +1,5 @@
 <?php
-namespace app\index\controller;
+namespace app\admin\controller;
  
 use think\Controller;
 use think\Request;
@@ -30,7 +30,7 @@ class Login extends Controller
                 ];
                 session('user',$sdata);
 
-                $this->success('登录成功、前往管理后台','index/Index/index');
+                $this->success('登录成功、前往管理后台','admin/Index/index');
             }
         }else{
         return $this->fetch();

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>控制台</title>
+    <title>角色列表</title>
 
 
     <!--STYLESHEET-->
@@ -15,31 +15,31 @@
 
 
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="/static/common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="/static/common/css/nifty.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/css/nifty.min.css" rel="stylesheet">
 
 
     <!--Nifty Premium Icon [ DEMONSTRATION ]-->
-    <link href="/static/common/css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/css/demo/nifty-demo-icons.min.css" rel="stylesheet">
 
 
     <!--Demo [ DEMONSTRATION ]-->
-    <link href="/static/common/css/demo/nifty-demo.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/css/demo/nifty-demo.min.css" rel="stylesheet">
 
-    <link href="/static/common/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
 
         
     <!--Morris.js [ OPTIONAL ]-->
-    <link href="/static/common/plugins/morris-js/morris.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/plugins/morris-js/morris.min.css" rel="stylesheet">
 
 
     <!--Magic Checkbox [ OPTIONAL ]-->
-    <link href="/static/common/plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
 
-    <link href="/static/common/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{$Think.config.web_root}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
 
@@ -50,20 +50,20 @@
     <!--=================================================-->
 
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
-    <link href="/static/common/plugins/pace/pace.min.css" rel="stylesheet">
-    <script src="/static/common/plugins/pace/pace.min.js"></script>
+    <link href="{$Think.config.web_root}/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="{$Think.config.web_root}/plugins/pace/pace.min.js"></script>
 
 
     <!--jQuery [ REQUIRED ]-->
-    <script src="/static/common/js/jquery-2.2.4.min.js"></script>
+    <script src="{$Think.config.web_root}/js/jquery-2.2.4.min.js"></script>
 
 
     <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="/static/common/js/bootstrap.min.js"></script>
+    <script src="{$Think.config.web_root}/js/bootstrap.min.js"></script>
 
 
     <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="/static/common/js/nifty.min.js"></script>
+    <script src="{$Think.config.web_root}/js/nifty.min.js"></script>
 
 
 
@@ -73,51 +73,35 @@
     <!--=================================================-->
     
     <!--Demo script [ DEMONSTRATION ]-->
-    <script src="/static/common/js/demo/nifty-demo.min.js"></script>
+    <script src="{$Think.config.web_root}/js/demo/nifty-demo.min.js"></script>
 
     
     <!--Morris.js [ OPTIONAL ]-->
-    <script src="/static/common/plugins/morris-js/morris.min.js"></script>
-    <script src="/static/common/plugins/morris-js/raphael-js/raphael.min.js"></script>
+    <script src="{$Think.config.web_root}/plugins/morris-js/morris.min.js"></script>
+    <script src="{$Think.config.web_root}/plugins/morris-js/raphael-js/raphael.min.js"></script>
 
 
     <!--Sparkline [ OPTIONAL ]-->
-    <script src="/static/common/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{$Think.config.web_root}/plugins/sparkline/jquery.sparkline.min.js"></script>
 
 
     <!--Specify page [ SAMPLE ]-->
-    <script src="/static/common/js/demo/dashboard.js"></script>
+    <script src="{$Think.config.web_root}/js/demo/dashboard.js"></script>
 
 
 
+
+        
+    <!--Summernote [ OPTIONAL ]-->
+    <link href="{$Think.config.web_root}/plugins/summernote/summernote.min.css" rel="stylesheet">
 
     
-    <!--=================================================
-
-    REQUIRED
-    You must include this in your project.
+    <!--Summernote [ OPTIONAL ]-->
+    <script src="{$Think.config.web_root}/plugins/summernote/summernote.min.js"></script>
 
 
-    RECOMMENDED
-    This category must be included but you may modify which plugins or components which should be included in your project.
-
-
-    OPTIONAL
-    Optional plugins. You may choose whether to include it in your project or not.
-
-
-    DEMONSTRATION
-    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-
-    SAMPLE
-    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-    Detailed information and more samples can be found in the document.
-
-    =================================================-->
-        
+    <!--Form File Upload [ SAMPLE ]-->
+    <script src="{$Think.config.web_root}/js/demo/form-text-editor.js"></script>
 
 </head>
 
@@ -134,10 +118,10 @@
                 <!--Brand logo & name-->
                 <!--================================-->
                 <div class="navbar-header">
-                    <a href="{:url('Index/Index/index')}" class="navbar-brand">
-                        <img src="/static/common/img/logo.png" alt="Nifty Logo" class="brand-icon">
+                    <a href="{:url('Admin/Index/index')}" class="navbar-brand">
+                        <img src="{$Think.config.web_root}/img/logo.png" alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">zyy</span>
+                            <span class="brand-text">zy</span>
                         </div>
                     </a>
                 </div>
@@ -267,7 +251,7 @@
                                             <li class="bg-gray">
                                                 <a class="media" href="#">
                                                     <div class="media-left">
-                                                        <img class="img-circle img-sm" alt="Profile Picture" src="/static/common/img/profile-photos/9.png">
+                                                        <img class="img-circle img-sm" alt="Profile Picture" src="{$Think.config.web_root}/img/profile-photos/9.png">
                                                     </div>
                                                     <div class="media-body">
                                                         <div class="text-nowrap">Lucy sent you a message</div>
@@ -280,7 +264,7 @@
                                             <li class="bg-gray">
                                                 <a class="media" href="#">
                                                     <div class="media-left">
-                                                        <img class="img-circle img-sm" alt="Profile Picture" src="/static/common/img/profile-photos/3.png">
+                                                        <img class="img-circle img-sm" alt="Profile Picture" src="{$Think.config.web_root}/img/profile-photos/3.png">
                                                     </div>
                                                     <div class="media-body">
                                                         <div class="text-nowrap">Jackson sent you a message</div>
@@ -391,22 +375,22 @@
                                         <ul class="list-unstyled list-inline text-justify">
 
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-2.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-2.jpg" alt="thumbs">
                                             </li>
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-3.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-3.jpg" alt="thumbs">
                                             </li>
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-1.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-1.jpg" alt="thumbs">
                                             </li>
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-4.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-4.jpg" alt="thumbs">
                                             </li>
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-5.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-5.jpg" alt="thumbs">
                                             </li>
                                             <li class="pad-btm">
-                                                <img src="/static/common/img/thumbs/mega-menu-6.jpg" alt="thumbs">
+                                                <img src="{$Think.config.web_root}/img/thumbs/mega-menu-6.jpg" alt="thumbs">
                                             </li>
                                         </ul>
                                         <a href="#" class="btn btn-sm btn-block btn-default">Browse Gallery</a>
@@ -425,7 +409,7 @@
                         <li class="dropdown">
                             <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
                                 <span class="lang-selected">
-                                    <img class="lang-flag" src="/static/common/img/flags/united-kingdom.png" alt="English">
+                                    <img class="lang-flag" src="{$Think.config.web_root}/img/flags/united-kingdom.png" alt="English">
                                 </span>
                             </a>
 
@@ -434,7 +418,7 @@
                                 <li>
                                     <!--English-->
                                     <a href="#" class="active">
-                                        <img class="lang-flag" src="/static/common/img/flags/united-kingdom.png" alt="English">
+                                        <img class="lang-flag" src="{$Think.config.web_root}/img/flags/united-kingdom.png" alt="English">
                                         <span class="lang-id">EN</span>
                                         <span class="lang-name">English</span>
                                     </a>
@@ -442,7 +426,7 @@
                                 <li>
                                     <!--France-->
                                     <a href="#">
-                                        <img class="lang-flag" src="/static/common/img/flags/france.png" alt="France">
+                                        <img class="lang-flag" src="{$Think.config.web_root}/img/flags/france.png" alt="France">
                                         <span class="lang-id">FR</span>
                                         <span class="lang-name">Fran&ccedil;ais</span>
                                     </a>
@@ -450,7 +434,7 @@
                                 <li>
                                     <!--Germany-->
                                     <a href="#">
-                                        <img class="lang-flag" src="/static/common/img/flags/germany.png" alt="Germany">
+                                        <img class="lang-flag" src="{$Think.config.web_root}/img/flags/germany.png" alt="Germany">
                                         <span class="lang-id">DE</span>
                                         <span class="lang-name">Deutsch</span>
                                     </a>
@@ -458,7 +442,7 @@
                                 <li>
                                     <!--Italy-->
                                     <a href="#">
-                                        <img class="lang-flag" src="/static/common/img/flags/italy.png" alt="Italy">
+                                        <img class="lang-flag" src="{$Think.config.web_root}/img/flags/italy.png" alt="Italy">
                                         <span class="lang-id">IT</span>
                                         <span class="lang-name">Italiano</span>
                                     </a>
@@ -466,7 +450,7 @@
                                 <li>
                                     <!--Spain-->
                                     <a href="#">
-                                        <img class="lang-flag" src="/static/common/img/flags/spain.png" alt="Spain">
+                                        <img class="lang-flag" src="{$Think.config.web_root}/img/flags/spain.png" alt="Spain">
                                         <span class="lang-id">ES</span>
                                         <span class="lang-name">Espa&ntilde;ol</span>
                                     </a>
@@ -486,7 +470,7 @@
                                     <!--<img class="img-circle img-user media-object" src="images/profile-photos/1.png" alt="Profile Picture">-->
                                     <i class="demo-pli-male ic-user"></i>
                                 </span>
-                                <div class="username hidden-xs"><h4 class="text-main"><p class="text-pink"><b>欢迎：</b>{$Think.session.user.username}</p></h4></div>
+                                <div class="username hidden-xs"><h4 class="text-main"><p class="text-pink">{$Think.session.user.username}</p></h4></div>
                             </a>
 
 
@@ -562,233 +546,63 @@
                 
                 <!--Page Title-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!-- <div id="page-title">
-                    <h1 class="page-header text-overflow">Dashboard</h1>
-
-                    <div class="searchbox">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..">
-                            <span class="input-group-btn">
-                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </div> -->
+                <div id="page-title">
+                    
+                </div>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End page title-->
 
 
-                <div class="col-sm-12">
+                <!--Breadcrumb-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <ol class="breadcrumb">
+                    <li><a href="{:url('Admin/Index/index')}">首页</a></li>
+                    <li><a href="#">系统设置</a></li>
+                    <li class="active">编辑文章</li>
+                </ol>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+
+                    <!-- <div class="panel-heading">
+                        <h3 class="panel-title">Sample Toolbar</h3>
+                    </div> -->
+                
+                    <!--Data Table-->
+                    <!--===================================================-->
+                <div class="col-lg-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">服务器配置</h3>
+                            <h3 class="panel-title">Article Edit</h3>
                         </div>
             
-                        <!-- Striped Table -->
+                        <!--No Label Form-->
                         <!--===================================================-->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <tbody>
-                                        <tr>
-                                            <td>网站域名</td>
-                                            <td>{$_SERVER['HTTP_HOST']}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>网站目录</td>
-                                            <td>{$_SERVER['DOCUMENT_ROOT']}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>服务器端口</td>
-                                            <td>{$_SERVER['SERVER_PORT']}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>服务器环境</td>
-                                            <td>{$_SERVER['SERVER_SOFTWARE']}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <form class="form-horizontal" method="post" action="{:url('Index/Article/edi_art')}">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4 mar-btm">
+                                     <input type="text" class="form-control" name="title" placeholder="标题" value="{$data.title}" required="required" maxlength="15">
+                                     <input type="hidden" name="id" value="{$data.id}">
+                                    </div>
+                                    <div class="col-md-4 mar-btm">
+                                        <input type="text" class="form-control"  name="abstract"  placeholder="摘要" value="{$data.abstract}" required="required" maxlength="25">
+                                    </div>
+                                </div>
+                                <textarea placeholder="Message" rows="13" class="form-control" name="content" required="required" maxlength="55">{$data.content}</textarea>
                             </div>
-                        </div>
+                            <div class="panel-footer text-left">
+                                <button class="btn btn-default" type="submit">Sbumit</button>
+                            </div>
+                        </form>
                         <!--===================================================-->
-                        <!-- End Striped Table -->
+                        <!--End No Label Form-->
             
                     </div>
                 </div>
 
-                <!--Page content-->
-                <!--===================================================-->
-                <div id="page-content">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Order Status</h3>
-                                </div>
-                    
-                                <!--Data Table-->
-                                <!--===================================================-->
-                                <div class="panel-body">
-                                    <div class="pad-btm form-inline">
-                                        <div class="row">
-                                            <div class="col-sm-6 table-toolbar-left">
-                                                <button class="btn btn-purple"><i class="demo-pli-add icon-fw"></i>Add</button>
-                                                <button class="btn btn-default"><i class="demo-pli-printer"></i></button>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-information"></i></button>
-                                                    <button class="btn btn-default"><i class="demo-pli-recycling"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 table-toolbar-right">
-                                                <div class="form-group">
-                                                    <input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">
-                                                </div>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="demo-pli-gear"></i>
-                                                            <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                            <li><a href="#">Action</a></li>
-                                                            <li><a href="#">Another action</a></li>
-                                                            <li><a href="#">Something else here</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a href="#">Separated link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Invoice</th>
-                                                    <th>User</th>
-                                                    <th>Order date</th>
-                                                    <th>Amount</th>
-                                                    <th class="text-center">Status</th>
-                                                    <th class="text-center">Tracking Number</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link"> {$_SERVER['HTTP_HOST']}</a></td>
-                                                    <td>Steve N. Horton</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 22, 2014</span></td>
-                                                    <td>$45.00</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-success">Paid</div>
-                                                    </td>
-                                                    <td class="text-center">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link"> Order #53432</a></td>
-                                                    <td>Charles S Boyle</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 24, 2014</span></td>
-                                                    <td>$245.30</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-info">Shipped</div>
-                                                    </td>
-                                                    <td class="text-center"><i class="fa fa-plane"></i> CGX0089734531</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link"> Order #53433</a></td>
-                                                    <td>Lucy Doe</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 24, 2014</span></td>
-                                                    <td>$38.00</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-info">Shipped</div>
-                                                    </td>
-                                                    <td class="text-center"><i class="fa fa-plane"></i> CGX0089934571</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link"> Order #53434</a></td>
-                                                    <td>Teresa L. Doe</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 15, 2014</span></td>
-                                                    <td>$77.99</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-info">Shipped</div>
-                                                    </td>
-                                                    <td class="text-center"><i class="fa fa-plane"></i> CGX0089734574</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link"> Order #53435</a></td>
-                                                    <td>Teresa L. Doe</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 12, 2014</span></td>
-                                                    <td>$18.00</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-success">Paid</div>
-                                                    </td>
-                                                    <td class="text-center">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link">Order #53437</a></td>
-                                                    <td>Charles S Boyle</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 17, 2014</span></td>
-                                                    <td>$658.00</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-danger">Refunded</div>
-                                                    </td>
-                                                    <td class="text-center">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#" class="btn-link">Order #536584</a></td>
-                                                    <td>Scott S. Calabrese</td>
-                                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 19, 2014</span></td>
-                                                    <td>$45.58</td>
-                                                    <td class="text-center">
-                                                        <div class="label label-table label-warning">Unpaid</div>
-                                                    </td>
-                                                    <td class="text-center">-</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <hr>
-                                    <div class="pull-right">
-                                        <ul class="pagination text-nowrap mar-no">
-                                            <li class="page-pre disabled">
-                                                <a href="#">&lt;</a>
-                                            </li>
-                                            <li class="page-number active">
-                                                <span>1</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li>
-                                                <span>...</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">9</a>
-                                            </li>
-                                            <li class="page-next">
-                                                <a href="#">&gt;</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--===================================================-->
-                                <!--End Data Table-->
-                    
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-                <!--===================================================-->
-                <!--End page content-->
-
-
+                    <!--===================================================-->
+                    <!--End Data Table-->
+                
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
@@ -818,7 +632,7 @@
                                     <div class="profile-wrap">
                                         <div class="pad-btm">
                                             <span class="label label-success pull-right">New</span>
-                                            <img class="img-circle img-sm img-border" src="/static/common/img/profile-photos/1.png" alt="Profile Picture">
+                                            <img class="img-circle img-sm img-border" src="{$Think.config.web_root}/img/profile-photos/1.png" alt="Profile Picture">
                                         </div>
                                         <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
                                             <span class="pull-right dropdown-toggle">
@@ -838,7 +652,7 @@
                                         <a href="#" class="list-group-item">
                                             <i class="demo-pli-information icon-lg icon-fw"></i> Help
                                         </a>
-                                        <a href="#" class="list-group-item">
+                                        <a href="../Admin/Index/logout" class="list-group-item">
                                             <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
                                         </a>
                                     </div>
@@ -882,7 +696,7 @@
                         
                                     <!--Menu list item-->
                                     <li class="active-link">
-                                        <a href="{:url('Index/Index/index')}">
+                                        <a href="{:url('Admin/Index/index')}">
                                             <i class="demo-psi-home"></i>
                                             <span class="menu-title">
                                                 <strong>控制台</strong>
@@ -1043,11 +857,35 @@
     <!--===================================================-->
     <!-- END OF CONTAINER -->
 
-
-    
-        <!-- SETTINGS - DEMO PURPOSE ONLY -->
-    <!-- END SETTINGS -->
-
+    <script>
+    /*文章提交*/
+    // $('#attrval').click(function () {
+    //     var title = $("input[name='title']").val();
+    //     var abstract = $("input[name='abstract']").val();
+    //     var content = $("textarea[name='content']").val();
+    //     var data = {
+    //         title: title,
+    //         abstract: abstract,
+    //         content: content,
+    //     }; 
+    //     $.ajax({
+    //         url: 'add_arts',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: data,
+    //         success:function(data){
+    //             alert("新增成功");
+    //             // var cc=1；
+    //             // if (cc) {
+    //                 location.href="{:url('Admin/Index/index')}";
+    //             // }
+    //         },
+    //         error:function(){
+    //             alert("222");
+    //         }
+    //     })
+    //     });
+    </script>
 
 </body>
 </html>

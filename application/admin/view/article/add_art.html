@@ -88,57 +88,21 @@
     <!--Specify page [ SAMPLE ]-->
     <script src="{$Think.config.web_root}/js/demo/dashboard.js"></script>
 
-	<style type="text/css">
-		.b-page {
-		  background: #fff;
-		  box-shadow: 0px 1px 2px 0px #E2E2E2;
-		}
-		.page {
-		  width: 100%;
-		  padding: 30px 15px;
-		  background: #FFF;
-		  text-align: center;
-		  overflow: hidden;
-		}
-		.page .first,
-		.page .prev,
-		.page .current,
-		.page .num,
-		.page .current,
-		.page .next,
-		.page .end {
-		  padding: 8px 16px;
-		  margin: 0px 5px;
-		  display: inline-block;
-		  color: #008CBA;
-		  border: 1px solid #F2F2F2;
-		  border-radius: 5px;
-		}
-		.page .first:hover,
-		.page .prev:hover,
-		.page .current:hover,
-		.page .num:hover,
-		.page .current:hover,
-		.page .next:hover,
-		.page .end:hover {
-		  text-decoration: none;
-		  background: #F8F5F5;
-		}
-		.page .current {
-		  background-color: #008CBA;
-		  color: #FFF;
-		  border-radius: 5px;
-		  border: 1px solid #008CBA;
-		}
-		.page .current:hover {
-		  text-decoration: none;
-		  background: #008CBA;
-		}
-		.page .not-allowed {
-		  cursor: not-allowed;
-		}
 
-	</style>
+
+
+        
+    <!--Summernote [ OPTIONAL ]-->
+    <link href="{$Think.config.web_root}/plugins/summernote/summernote.min.css" rel="stylesheet">
+
+    
+    <!--Summernote [ OPTIONAL ]-->
+    <script src="{$Think.config.web_root}/plugins/summernote/summernote.min.js"></script>
+
+
+    <!--Form File Upload [ SAMPLE ]-->
+    <script src="{$Think.config.web_root}/js/demo/form-text-editor.js"></script>
+
 </head>
 
 <!--TIPS-->
@@ -154,10 +118,10 @@
                 <!--Brand logo & name-->
                 <!--================================-->
                 <div class="navbar-header">
-                    <a href="{:url('Index/Index/index')}" class="navbar-brand">
+                    <a href="{:url('Admin/Index/index')}" class="navbar-brand">
                         <img src="{$Think.config.web_root}/img/logo.png" alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">zyy</span>
+                            <span class="brand-text">zy</span>
                         </div>
                     </a>
                 </div>
@@ -592,65 +556,52 @@
                 <!--Breadcrumb-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <ol class="breadcrumb">
-                    <li><a href="{:url('Index/Index/index')}">首页</a></li>
+                    <li><a href="{:url('Admin/Index/index')}">首页</a></li>
                     <li><a href="#">系统设置</a></li>
-                    <li class="active">文章管理</li>
+                    <li class="active">新增文章</li>
                 </ol>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End breadcrumb-->
-				<div class="alert alert-info" style="margin: 17px;">
-                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
-                    <h2><strong>注意!</strong>测试账号每个IP每分钟只能新增一篇文章，没有删除和编辑权限。</h2>
-                </div>
-                <div class="panel">
+
                     <!-- <div class="panel-heading">
                         <h3 class="panel-title">Sample Toolbar</h3>
                     </div> -->
                 
                     <!--Data Table-->
                     <!--===================================================-->
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a class="btn btn-info btn-rounded" href="{:url('Index/Article/add_art')}">新增文章</a></h3>
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Article Add</h3>
+                        </div>
+            
+                        <!--No Label Form-->
+                        <!--===================================================-->
+                        <form class="form-horizontal" method="post" action="{:url('Index/Article/add_art')}">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4 mar-btm">
+                                     <input type="text" class="form-control" name="title" placeholder="标题" required="required" maxlength="15">
+                                    </div>
+                                    <div class="col-md-4 mar-btm">
+                                        <input type="text" class="form-control"  name="abstract"  placeholder="摘要" required="required" maxlength="25">
+                                    </div>
+                                </div>
+                                <textarea placeholder="Message" rows="13" class="form-control" name="content" required="required" maxlength="55"></textarea>
+                            </div>
+                            <div class="panel-footer text-left">
+                                <button class="btn btn-default" type="submit">Sbumit</button>
+                            </div>
+                        </form>
+                        <!--===================================================-->
+                        <!--End No Label Form-->
+            
                     </div>
-                    <div class="panel panel-info">
-						<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>
-						<div class="panel-body">
-							<table  class="table table-bordered table-hover">
-							<thead>
-							    <tr>
-							        <th width="5%">ID</th>
-							        <th width="15%">标题</th>
-							        <th width="30%">摘要</th>
-							        <th width="15%">时间</th>
-							        <th width="10%">作者</th>
-							        <th width="25%">操作</th>
-							    </tr>
-							</thead>
-							    <tbody>
-							        {volist name = "data" id = "vo" }
-							        <tr>
-							            <td>{$vo.id}</td>
-							            <td>{$vo.title}</td>
-							            <td>{$vo.abstract}</td>
-							            <td>{$vo.create_time}</td>
-							            <td>{$vo.author}</td>
-							            <td>
-							            	<a type="button" class="btn btn-warning  btn-xs btn-rounded" href="{:url('Index/Article/edi_art',array('id'=>$vo['id']))}">  编辑  </a>
-							            	&nbsp;&nbsp;
-							           		<a  type="button" class="btn btn-danger  btn-xs btn-rounded"  href="javascript:if(confirm('确认删除这篇文章？'))location='{:url('Index/Article/del_art',array('id'=>$vo['id']))}'">  删除  </a>
-							            </td>
-							        </tr>
-							        {/volist}
-							    </tbody>
-							</table>
+                </div>
 
-                            {$data->render()}
-						</div>
-				    </div>
                     <!--===================================================-->
                     <!--End Data Table-->
                 
-                </div>
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
@@ -744,7 +695,7 @@
                         
                                     <!--Menu list item-->
                                     <li class="active-link">
-                                        <a href="{:url('Index/Index/index')}">
+                                        <a href="{:url('Admin/Index/index')}">
                                             <i class="demo-psi-home"></i>
                                             <span class="menu-title">
                                                 <strong>控制台</strong>
@@ -905,128 +856,34 @@
     <!--===================================================-->
     <!-- END OF CONTAINER -->
 
-
-    
-        <!-- SETTINGS - DEMO PURPOSE ONLY -->
-
-    <!-- END SETTINGS -->
-
-    <!-- 添加菜单模态框开始 -->
-    <div class="modal fade" id="thinkright-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        新增角色
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline" action="{:url('Index/Rule/add_group')}" method="post">
-                        <div class="form-group">
-                            <label for="demo-inline-inputmail" class="sr-only">角色名：</label>
-                            <input type="text" placeholder="请输入角色"  id="demo-inline-inputmail" class="form-control" name="title">
-                        </div>
-                        <button class="btn btn-primary" type="submit">添加</button>
-                    </form>
-                      
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 添加菜单模态框结束 -->
-
-    <!-- 修改菜单模态框开始 -->
-    <div class="modal fade" id="thinkright-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        修改规则
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <form id="bjy-form" class="form-inline" action="{:url('Index/Rule/edit_group')}" method="post">
-                        <input type="hidden" name="id">
-                        <table class="table table-striped table-bordered table-hover table-condensed">
-                            <tr>
-                                <th width="12%">规则名：</th>
-                                <td>
-                                    <input class="form-control" type="text" name="title">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td>
-                                    <input class="btn btn-success" type="submit" value="修改">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 修改菜单模态框结束 -->
-
-    <!-- 给角色添加用户开始 -->
-    <div class="modal fade" id="thinkright-adduser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="modal-dialog">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        添加成员
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline" action="{:url('Index/Rule/add_user')}" method="post">
-                        <div class="form-group">
-                            <label for="demo-inline-inputmail" class="sr-only">成员名：</label>
-                            <input type="text" placeholder="请输入角色的成员"  id="demo-inline-inputmail" class="form-control" name="title">
-                            <input type="hidden" name="group_id">
-                        </div>
-                        <button class="btn btn-primary" type="submit">添加</button>
-                    </form>
-                      
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 给角色添加用户结束 -->
-
-
     <script>
-    // 添加菜单
-    function add(){
-        $("input[name='title']").val('');
-        $('#thinkright-add').modal('show');
-    }
-
-    // 修改菜单
-    function edit(obj){
-        var ruleId=$(obj).attr('ruleId');
-        var ruletitle=$(obj).attr('ruletitle');
-        $("input[name='id']").val(ruleId);
-        $("input[name='title']").val(ruletitle);
-        $('#thinkright-edit').modal('show');
-    }
-
-    // 向角色添加用户 Admin/Rule/check_user
-    function adduser(obj){
-        var groupId=$(obj).attr('groupId');
-        // var ruletitle=$(obj).attr('ruletitle');
-        $("input[name='group_id']").val(groupId);
-        // $("input[name='title']").val(ruletitle);
-        $('#thinkright-adduser').modal('show');
-    }
+    /*文章提交*/
+    // $('#attrval').click(function () {
+    //     var title = $("input[name='title']").val();
+    //     var abstract = $("input[name='abstract']").val();
+    //     var content = $("textarea[name='content']").val();
+    //     var data = {
+    //         title: title,
+    //         abstract: abstract,
+    //         content: content,
+    //     }; 
+    //     $.ajax({
+    //         url: 'add_arts',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: data,
+    //         success:function(data){
+    //             alert("新增成功");
+    //             // var cc=1；
+    //             // if (cc) {
+    //                 location.href="{:url('Admin/Index/index')}";
+    //             // }
+    //         },
+    //         error:function(){
+    //             alert("222");
+    //         }
+    //     })
+    //     });
     </script>
 
 </body>
