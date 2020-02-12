@@ -1,11 +1,11 @@
 <?php
-namespace app\api\controller\v1;
+namespace app\api\controller\v2;
 
 class User
 {
     public function read()
     {
-        $data = ['sdfs','sdfsd'];        
+        $data = ['Hello','World'];
         return json($data);
     }
 }
