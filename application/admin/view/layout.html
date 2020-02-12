@@ -66,131 +66,21 @@
 <body>
 
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
-        {include file='index/_header' /}
+        {include file='index/tpl_common_header' /}
         <div class="boxed">
             {__CONTENT__}            
             <!--ASIDE-->
             <!--===================================================-->
-            {include file='index/_nav' /}
+            {include file='index/tpl_common_nav' /}
             <!--===================================================-->
             <!--END ASIDE-->
         </div>
-        {include file='index/_footer' /}
+        {include file='index/tpl_common_footer' /}
     </div>
     <!--===================================================-->
-    <!-- END OF CONTAINER -->
-  {if title == '权限分配'}
-
-    
-    <!--rule list-->
-        <div class="modal fade" id="thinkright-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        添加权限
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" action="{:url('Admin/Rule/add')}" method="post">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="demo-hor-inputemail">权限名</label>
-                                <div class="col-sm-9">
-                                    <input type="hidden" name="pid" value="0">
-                                    <input type="text"  id="demo-hor-inputemail" class="form-control" name="title" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="demo-hor-inputpass">权限</label>
-                                <div class="col-sm-9">
-                                    <input type="text"  id="demo-hor-inputpass" class="form-control" name="name" required="required">
-                                    <span class="text-warning">输入模块/控制器/方法即可 例如 Index/Rule/index</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-footer text-right">
-                            <button class="btn btn-success" type="submit">提交</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 修改菜单模态框开始 -->
-    <div class="modal fade" id="thinkright-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        修改权限
-                    </h4> 
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" action="{:url('Admin/Rule/edit')}" method="post">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="demo-hor-inputemail">权限名</label>
-                                <div class="col-sm-9">
-                                    <input type="hidden" name="id">
-                                    <input type="text"  id="demo-hor-inputemail" class="form-control" name="title" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="demo-hor-inputpass">权限</label>
-                                <div class="col-sm-9">
-                                    <input type="text"  id="demo-hor-inputpass" class="form-control" name="name" required="required">
-                                    <span class="text-danger">输入模块/控制器/方法即可 例如 Index/Rule/index</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-footer text-right">
-                            <button class="btn btn-success" type="submit">修改</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 修改菜单模态框结束 -->
-
-
-    <script type="text/javascript">
-        /*添加权限*/
-        function add(){
-            $("input[name='title'],input[name='name']").val('');
-            $("input[name='pid']").val(0);
-            $('#thinkright-add').modal('show');
-        }
-
-
-        // 添加子菜单
-        function add_child(obj){
-            var ruleId=$(obj).attr('ruleId');
-            $("input[name='pid']").val(ruleId);
-            $("input[name='title']").val('');
-            $("input[name='name']").val('');
-            $('#thinkright-add').modal('show');
-        }
-
-        // 修改菜单
-        function edit(obj){
-            var ruleId=$(obj).attr('ruleId');
-            var ruletitle=$(obj).attr('ruletitle');
-            var ruleName=$(obj).attr('ruleName');
-            $("input[name='id']").val(ruleId);
-            $("input[name='title']").val(ruletitle);
-            $("input[name='name']").val(ruleName);
-            $('#thinkright-edit').modal('show');
-        }
-    </script>    
-    <!--rule list End-->
+    <!-- END OF CONTAINER --> 
+    {include file='index/tpl_rule_distribution' /} 
+    {include file='index/tpl_rule_group' /}
+    {include file='index/tpl_rule_list' /}
 </body>
 </html>
