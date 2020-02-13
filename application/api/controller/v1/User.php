@@ -9,7 +9,9 @@ class User
     public function read()
     {
         //$data = ['sdfs','sdfsd'];
-        $data = Db::connect("mssql")->name('t_User_Bak')->select();
+        $data = Db::connect("mssql")
+            ->name('t_usertype')
+            ->all();
         return json($data);
     }
 }
