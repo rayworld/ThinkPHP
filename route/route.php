@@ -8,24 +8,17 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-//Route::rule('user/:id','api/User/read');
-
-//Route::get('think', function () {
-//    return 'hello,ThinkPHP5!';
-//});
-
-//Route::get('hello/[:name]', 'index/hello');
-
-//return [
-
-//];
 
 
+Route::get('think', function () {
+  return 'hello,ThinkPHP5!';
+});
 
-Route::get(':version.user/read','api/:version.User/read');
-Route::post('test/:id','api/test/update');
-Route::delete('test/:id','api/test/delete');
-Route::put('test','api/test/save');
+Route::get('hello/[:name]', 'index/hello');
 
+return [];
 
-
+Route::get(':version.user/read', 'api/:version.User/read');
+Route::post('test/:id', 'api/test/update');
+Route::delete('test/:id', 'api/test/delete');
+Route::put('test', 'api/test/save');

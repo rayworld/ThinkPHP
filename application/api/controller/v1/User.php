@@ -11,7 +11,8 @@ class User
         //$data = ['sdfs','sdfsd'];
         $data = Db::connect("mssql")
             ->name('t_usertype')
-            ->all();
+            ->query('select * from t_usertype ');
+        $count = count($data);
         return json($data);
     }
 }
