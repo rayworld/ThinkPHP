@@ -18,7 +18,10 @@ class Login extends Controller
             // dump($map);
             // exit();
             $map['password'] = md5($map['password']);
-            $data = Db::connect("mysql")->name('users')->where($map)->find();
+            $data = Db::connect("mysql")
+                ->name('users')
+                ->where($map)
+                ->find();
             if (empty($data)) {
                 $this->error('账号或密码错误');
             } else {

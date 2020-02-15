@@ -1,4 +1,5 @@
 <?php
+
 namespace app\admin\controller;
 
 use think\Controller;
@@ -7,23 +8,25 @@ use think\Request;
 
 class User extends Controller
 {
-       /**
+    /**
      * 用户列表
      */
-    public function index() {
-        $data = Db::name('auth_group_access')
-                ->alias('aga')
-                ->field('u.id,u.username,u.email,aga.group_id,ag.title')
-                ->join('__USERS__ u', 'aga.uid=u.id', 'RIGHT')
-                ->join('__AUTH_GROUP__ ag', 'aga.group_id=ag.id', 'LEFT')
-                ->select();
+    public function index()
+    {
+        $data = Db::connect('mysql')
+            ->name('auth_group_access')
+            ->alias('aga')
+            ->field('u.id,u.username,u.email,aga.group_id,ag.title')
+            ->join('__USERS__ u', 'aga.uid=u.id', 'RIGHT')
+            ->join('__AUTH_GROUP__ ag', 'aga.group_id=ag.id', 'LEFT')
+            ->select();
         $first = $data[0];
         $first['title'] = array();
         $user_data[$first['id']] = $first;
         // 组合数组
         foreach ($data as $k => $v) {
             foreach ($user_data as $m => $n) {
-                $uids = array_map(function($a) {
+                $uids = array_map(function ($a) {
                     return $a['id'];
                 }, $user_data);
                 if (!in_array($v['id'], $uids)) {
@@ -52,7 +55,8 @@ class User extends Controller
     /**
      * 添加管理员
      */
-    public function add_user() {
+    public function add_user()
+    {
         $request = request();
         if ($request->post()) {
             $data = input('post.');
@@ -94,7 +98,8 @@ class User extends Controller
     /**
      * 修改管理员
      */
-    public function edit_user($id) {
+    public function edit_user($id)
+    {
         $request = request();
         if ($request->post()) {
             $data = input('post.');
@@ -145,8 +150,8 @@ class User extends Controller
             $user_data = Db::name('users')->find($id);
             // 获取已加入用户组
             $group_data = Db::name('auth_group_access')
-                    ->where(array('uid' => $id))
-                    ->find();
+                ->where(array('uid' => $id))
+                ->find();
             // 全部用户组
             $data = Db::name('auth_group')->select();
             $assign = array(
@@ -161,13 +166,15 @@ class User extends Controller
 
     /* 个人中心 */ /* 分开写是为了将权限更细化 */
 
-    public function my_center() {
+    public function my_center()
+    {
         return $this->fetch();
     }
 
     /* 修改个人资料 */
 
-    public function change_msg() {
+    public function change_msg()
+    {
         $request = request();
         if ($request->post()) {
             $data['username'] = trim(input('post.username'));

@@ -10,13 +10,13 @@
 // +----------------------------------------------------------------------
 
 
-Route::get('think', function () {
-  return 'hello,ThinkPHP5!';
-});
+//Route::get('think', function () {
+//  return 'hello,ThinkPHP5!';
+//});
 
-Route::get('hello/[:name]', 'index/hello');
+//Route::get('hello/[:name]', 'index/hello');
 
-return [];
+//return [];
 
 Route::get(':version.user/read', 'api/:version.User/read');
 Route::post('test/:id', 'api/test/update');
